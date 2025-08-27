@@ -6,3 +6,28 @@ semantic_models:
     label: "Debt Metrics"
     description: "Metrics related to debts"
     model: ref('bigger_debts')
+
+    entities:
+      - name: debt
+        type: primary
+        expr: id
+
+    dimensions:
+      - name: date
+        type: time
+        expr: date
+        type_params:
+          time_granularity: day
+      - name: creditor
+        type: categorical
+        expr: creditor
+      - name: due_date
+        type: time
+        expr: due_date
+        type_params:
+          time_granularity: day
+
+    measures:
+      - name: total_amount
+        agg: sum
+        expr: amount

@@ -1,0 +1,11 @@
+dbt_postgres_demo:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: dummy
+      pass: dummy
+      dbname: dummy
+      schema: dummy
