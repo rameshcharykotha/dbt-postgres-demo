@@ -1,0 +1,8 @@
+version: 2
+semantic_models:
+  - name: debt_metrics
+    defaults:
+      agg_time_dimension: date
+    label: "Debt Metrics"
+    description: "Metrics related to debts"
+    model: ref('bigger_debts')

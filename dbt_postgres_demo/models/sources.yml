@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: finance   # Replace with your source database/schema name
+    description: "Source database containing raw tables"
+    tables:
+      - name: categories
+        description: "This table contains category information with unique IDs and names."
+        columns:
+          - name: id
+            description: "Unique identifier for each category"
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: "Name of the category"
+            tests:
+              - not_null
+
+      - name: debts
+        description: "This table contains loan information including amounts, interest rates, and due dates."
+        columns:
+          - name: id
+            description: "Unique identifier for each loan"
+            tests:
+              - not_null
+              - unique
+          - name: date
+            description: "The date the loan was created"
+            tests:
+              - not_null
+          - name: creditor
+            description: "Name of the creditor"
+            tests:
+              - not_null
+          - name: amount
+            description: "Principal amount of the loan"
+            tests:
+              - not_null
+          - name: interest_rate
+            description: "Interest rate of the loan"
+            tests:
+              - not_null
+          - name: due_date
+            description: "Due date for the loan repayment"
+            tests:
+              - not_null
+          - name: notes
+            description: "Additional notes about the loan"
