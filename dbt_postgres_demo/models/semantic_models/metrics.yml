@@ -20,5 +20,7 @@ metrics:
     description: "Average revenue per order"
     type: derived
     type_params:
-      expr: "{{ total_revenue_metric  }} / NULLIF({{ order_count_metric  }}, 0)"
-      metrics: [total_revenue_metric, order_count_metric ]
+      expr: "total_revenue_metric / NULLIF(order_count_metric, 0)"
+      metrics:
+        - total_revenue_metric
+        - order_count_metric
