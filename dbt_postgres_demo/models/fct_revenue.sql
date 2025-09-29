@@ -9,4 +9,4 @@ with base as (
         revenue
     from {{ source('public', 'daily_revenue') }}
 )
-select * from base;
+select * from base
