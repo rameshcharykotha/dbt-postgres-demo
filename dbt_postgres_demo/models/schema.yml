@@ -2,36 +2,6 @@
 version: 2
 
 models:
-  - name: bigger_debts
-    description: "This table contains bigger debts greater than 30000 amount."
-    columns:
-      - name: id
-        description: "Unique identifier for each category"
-        tests:
-          - unique
-          - not_null
-      - name: date
-        description: "Date of the debt"
-        tests:
-          - not_null
-      - name: creditor
-        description: "Creditor of the debt"
-        tests:
-          - not_null
-      - name: amount
-        description: "Amount of the debt"
-        tests:
-          - not_null
-      - name: interest_rate
-        description: "interest rate of the debt"
-        tests:
-          - not_null
-      - name: due_date
-        description: "Due date of the debt"
-        tests:
-          - not_null
-      - name: notes
-        description: "notes of the debt"
   - name: date_spine
     description: "This table is a time spine model with daily granularity."
     time_spine:
